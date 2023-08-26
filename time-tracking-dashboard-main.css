@@ -25893,7 +25893,7 @@ main.outer {
     main.outer #card .sections {
       display: grid;
       grid-template-columns: 300px;
-      overflow: auto; }
+      overflow-y: auto; }
       main.outer #card .sections section .w-100 {
         border-radius: 15px; }
       main.outer #card .sections section .ellipsis {

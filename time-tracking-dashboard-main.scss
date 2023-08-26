@@ -152,7 +152,7 @@ main.outer {
 	  .sections{
 	      display:grid;
 		  grid-template-columns:300px;
-		  overflow:auto;
+		  overflow-y:auto;
 		  
 		  section{
 		      .w-100{
