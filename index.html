@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  
+  <link rel='stylesheet' href='time-tracking-dashboard-main.css' type='text/css'>
+  <title>Frontend Mentor | Time tracking dashboard</title>
+
+  
+</head>
+<body dir='ltr'>
+        <main class='outer'> 
+		    <div id='card' >
+			    <div id='report' class='card'>
+				  <div id='person'>
+			        <img src="./images/image-jeremy.PNG" width='234' height='234' alt="">
+				    <h1 class='card-header'> 
+					  <span class='fs-6   muted'>Report for</span><br>
+					  <span class='fw-normal'>Jeremy Robson</span>
+					</h1>
+			      </div>
+				  <div id='links' class="card-body">
+                      <div class='card-text '>
+                            <ul class='d-flex flex-row flex-xxl-column'>
+                               <li >
+                                 <button id='daily' class="me-4 nav-link active">Daily</button>
+                               </li>
+                               <li >
+                                 <button id='weekly' class="me-4 nav-link">Weekly</button>
+                               </li>
+                               <li >
+                                 <button id='monthly' class="nav-link">Monthly</button>
+                               </li>
+                            </ul>
+				       </div>
+			       </div>
+				   
+				</div>
+			  <div class='sections'>
+			    <section>
+				    <div class='w-100 d-flex justify-content-end'>
+				       <img src='./images/icon-work.svg' alt='' width="79" height="79">
+					</div>
+				    <div class='up'>
+					  <div class='d-flex justify-content-between'>
+                         <h2 class='title'>Work</h2>
+						 <img class='me-3 ellipsis' src='./images/icon-ellipsis.svg' alt='' width="21" height="5">
+				      </div>
+					  <div class='d-flex flex-xxl-column justify-content-between flex-row align-items-xxl-start align-items-center' id='work'>
+					  </div>
+					</div>
+                </section>
+				<section>
+				    <div class='w-100 d-flex justify-content-end'>
+				        <img src='./images/icon-play.svg' alt='' width="76" height="77">
+				    </div>
+                    <div class='up'>
+					  <div class='d-flex justify-content-between'>
+					      <h2 class='title'>Play</h2>
+						  <img class='me-3 ellipsis' src='./images/icon-ellipsis.svg' alt='' width="21" height="5">
+					  </div>
+					  <div class='d-flex flex-xxl-column justify-content-between flex-row align-items-xxl-start align-items-center' id='play'>
+					  </div>
+					</div>
+               </section>
+			   <section>
+			        <div class='w-100 d-flex justify-content-end'>
+			            <img src='./images/icon-study.svg' alt='' width="79" height="79">
+				    </div>
+					<div class='up'>
+					   <div class='d-flex justify-content-between'>
+                          <h2 class='title'>Study</h2>
+						  <img class='me-3 ellipsis' src='./images/icon-ellipsis.svg' alt='' width="21" height="5">
+					   </div>
+					   <div class='d-flex flex-xxl-column justify-content-between flex-row align-items-xxl-start align-items-center' id='study'>
+					   </div>
+					</div>
+               </section>
+			   <section>
+			        <div class='w-100 d-flex justify-content-end'>
+			            <img src='./images/icon-exercise.svg' alt='' width="81" height="55">
+					</div>
+			        <div class='up'>
+					   <div class='d-flex justify-content-between'>
+                          <h2 class='title'>Exercise</h2>
+						  <img class='me-3 ellipsis' src='./images/icon-ellipsis.svg' alt='' width="21" height="5">
+					   </div>
+					   <div class='d-flex flex-xxl-column justify-content-between flex-row align-items-xxl-start align-items-center' id='exercise'>
+					   </div>
+					</div>
+               </section>
+			   <section>
+			        <div class='w-100 d-flex justify-content-end'>
+                       <img src='./images/icon-social.svg' alt='' width="75" height="100">
+					</div>
+					<div class='up'>
+					   <div class='d-flex justify-content-between'>
+					      <h2 class='title'>Social</h2>
+						  <img class='me-3 ellipsis' src='./images/icon-ellipsis.svg' alt='' width="21" height="5">
+					   </div>
+					   <div class='d-flex flex-xxl-column justify-content-between flex-row align-items-xxl-start align-items-center' id='social'>
+					   </div>
+					</div>
+               </section>
+			   <section>
+			        <div class='w-100 d-flex justify-content-end'>
+			           <img src='./images/icon-self-care.svg' alt='' width="67" height="67">
+					</div>
+					<div class='up'>
+					   <div class='d-flex justify-content-between'>
+                         <h2 class='title'>Self Care</h2>
+					     <img class='me-3 ellipsis' src='./images/icon-ellipsis.svg' alt='' width="21" height="5">
+					   </div>
+					   <div class='d-flex flex-xxl-column justify-content-between flex-row align-items-xxl-start align-items-center' id='self-care'>
+					   </div>
+					</div>
+               </section>
+			  </div>
+            </div>
+			<footer>
+	            <div class="attribution mt-5">
+                  <span class='me-2'>Challenge by</span><address><a class='me-2' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a></address>
+                  <span class='me-2'>Coded by</span><address><a href="https://www.frontendmentor.io/profile/cmb347827">CMB</a></address>
+                </div>
+	        </footer>	
+             
+        </main>
+        
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script>
+      <script src='json-functions.js'></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	  <script src='time-tracking-dashboard-main.js'></script>
+</body>
+</html>

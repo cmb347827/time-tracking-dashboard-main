@@ -1,0 +1,285 @@
+
+@import 'custom.scss';
+@import '_globals.scss';
+
+$colors: (
+  Blue: hsl(246, 80%, 60%),
+  Light red: hsl(15, 100%, 70%),
+  Soft blue (play): hsl(195, 74%, 62%),
+  Light red2: hsl(348, 100%, 68%),
+  Lime green (exercise): hsl(145, 58%, 55%),
+  Violet : hsl(264, 64%, 52%),
+  Soft orange (self care): hsl(43, 84%, 65%),
+  MidnightBlue: rgb(25, 25, 112),
+  Black: #000,
+  White: #fff,
+);
+$fallback-colors: (
+   SlateBlue LightCoral LightBlue LightSalmon LimeGreen Violet Coral MidnightBlue Black White
+);
+
+@mixin background($url,$position:auto,$size:auto,$repeat:no-repeat,$fixed:fixed,$color:white){
+    background: url($url) $position/$size $repeat $fixed $color; 
+}
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+@mixin width($grid-size) {
+  width: $grid-size * 1px;
+}
+@mixin max-width($grid-size) {
+  max-width: $grid-size * 1px;
+}
+@mixin min-width($grid-size) {
+  min-width: $grid-size * 1px;
+}
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font{
+     size: $font_size-16;
+     weight: $font_weight-normal;
+	 family: 'Rubik', sans-serif;
+  }
+  @include bg-color(map-get($colors,Black),nth($fallback-colors,9));
+}
+
+
+
+main.outer {
+    @include width($container__form-xs);
+	height: 100%;
+	display:grid;
+	margin: 50px auto;
+	font{
+	   size: $font_size-16 * 1.2;
+    }
+	@include bg-color(map-get($colors,Black),nth($fallback-colors,9));
+	@include font-color(map-get($colors,White),nth($fallback-colors,10));
+	
+	#card{
+	    display:grid; 
+		justify-items:center;
+        grid-template-columns: 1fr;
+		overflow:auto;
+		
+       #report{
+	       @include bg-color(map-get($colors,MidnightBlue),nth($fallback-colors,8));
+		   @include font-color(map-get($colors,White),nth($fallback-colors,10));
+		   @include border-radius(15px);
+		   display:grid;
+		   grid-template-columns: 300px;
+		   ul {
+		      list-style-type:none;
+		   }
+		   #person{
+		      @include border-radius(15px);
+		      @include bg-color(map-get($colors,Blue),nth($fallback-colors,1));
+			  grid-template-rows: 1fr 1fr;
+		      @media screen and(max-width:$container__form-xxl-min * 1px){
+			      display:flex;
+				  height: 100px;
+			  }
+		      img{
+		          transform: scale(0.3,0.3);
+				  position:relative;
+				  top:-65px;
+				  border: 6px solid white;
+				  @include border-radius(50%);
+			      @media screen and(min-width:$container__form-xxl * 1px){
+			        transform: scale(0.5,0.5);
+					left: -45px;
+					top: -30px;
+			      }
+		       }
+			   h1{
+			     position:relative;
+				 right:50px;
+                 bottom: 10px;
+			     font-size: 14px;
+				 span:nth-of-type(2){
+				    font-size: 1em * 0.7;
+				    @media screen and(min-width:$container__form-xxl *1px){
+					    font-size: 1em * 2.4;
+					}
+				 }
+				 @media screen and(min-width:$container__form-xxl * 1px){
+				    font-size:$font_size-16 * 1.3;
+					right:0;
+					bottom: 95px;
+				 }
+			   }
+		   }
+		   #links {
+		      button{
+		        @include font-color(map-get($colors,Blue),nth($fallback-colors,1));
+			    &:hover{
+			      @include font-color(map-get($colors,White),nth($fallback-colors,10));
+			    }
+			  }
+		   }
+		   @media screen and(min-width:$container__form-xxl * 1px){
+		      grid-template-rows: 300px 100px;
+		   }
+	   }
+	   
+	  .sections{
+	      display:grid;
+		  grid-template-columns:300px;
+		  overflow:auto;
+		  
+		  section{
+		      .w-100{
+		        @include border-radius(15px);
+			  }
+		      .ellipsis{
+			    position:relative;
+				top:5px;
+				&:hover{
+				   @include font-color(lighten(map-get($colors,White),5),nth($fallback-colors,10));
+				}
+			  }
+			  //class added in json-functions.js
+			  .last{
+			    @include font-color(map-get($colors,Blue),nth($fallback-colors,1));
+			  }
+			  
+		      h2.title{
+			     position:relative;
+				 top: 5px;
+			     font-size: 0.9em;
+				 font-weight: 500;
+			  }
+		      .up{
+			    @include bg-color(map-get($colors,MidnightBlue),nth($fallback-colors,8));
+				&:hover{
+				  @include bg-color(lighten(map-get($colors,MidnightBlue),11),nth($fallback-colors,8));
+				}
+			    position:relative;
+				z-index:1;
+				@include border-radius(15px);
+			  }
+			  //the six sections : section work 
+			  &:nth-of-type(1){
+			    .w-100{
+				  @include bg-color(map-get($colors,Light red),nth($fallback-colors,2));
+				}
+				.up{
+				  bottom:45px;
+				}
+			  }
+			  //section play
+			  &:nth-of-type(2){
+			    .w-100{
+				  @include bg-color(map-get($colors,Soft blue),nth($fallback-colors,3));
+				}
+				.up{
+				  bottom:45px;
+				}
+			  }
+			  //section study
+			  &:nth-of-type(3){
+			    .w-100{
+				  @include bg-color(map-get($colors,Light red2),nth($fallback-colors,4));
+				}
+				.up{
+				  bottom:45px;
+				}
+			  }
+			  //section exercise
+			  &:nth-of-type(4){
+			     .w-100{
+				  @include bg-color(map-get($colors,Lime green),nth($fallback-colors,5));
+				}
+				.up{
+				  bottom:5px;
+				}
+			  }
+			  //section social
+		      &:nth-of-type(5){
+			     @include margin(30px 0 0 0);
+			    .w-100{
+				  @include bg-color(map-get($colors,Violet),nth($fallback-colors,6));
+				}
+		        .up{
+				   bottom: 50px;
+			    }
+		      }
+			  //section self-care
+			  &:nth-of-type(6){
+			     .w-100{
+				  @include bg-color(map-get($colors,Soft orange),nth($fallback-colors,7));
+				}
+				.up{
+				  bottom: 15px;
+				}
+			  }
+			  &:nth-of-type(4),&:nth-of-type(6){
+			      @media screen and(min-width:$container__form-xxl * 1px){
+				     @include margin(30px 0 0 0);
+				  }
+			  }
+		  }
+		  @media screen and(max-width:$container__form-xxl-min * 1px){
+			  section img{
+			    transform:scale(0.5,0.5);
+			  }
+			  .ellipsis{
+			    transform: scale(1.4,1.4);
+			  }
+			  section p{
+			    font-size:$font_size-8 * 1.3;
+			  }
+		  }
+          
+	      @media screen and(min-width:$container__form-xxl * 1px){
+	         grid-template-rows: 175px 210px;                      
+             grid-template-columns: repeat(3,300px);
+			 column-gap: 45px;
+	      }
+	  }
+	  @media screen and(min-width:$container__form-xxl * 1px){
+	      grid-template-rows: 400px 400px;
+          grid-template-columns: 350px 1050px;
+	  }
+    }	  
+    @media screen and (min-width: $container__form-xxl * 1px) {
+       @include width($container__form-xxl);
+    }
+}
+
+footer {
+  .attribution {
+    font-size: $font_size-8;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
