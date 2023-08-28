@@ -87,7 +87,7 @@ main.outer {
 	    display:grid; 
 		justify-items:center;
         grid-template-columns: 1fr;
-		overflow:auto;
+		overflow:hidden;
 		
        #report{
 	       @include bg-color(map-get($colors,MidnightBlue),nth($fallback-colors,8));

@@ -25835,7 +25835,7 @@ main.outer {
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
-    overflow: auto; }
+    overflow: hidden; }
     main.outer #card #report {
       background-color: MidnightBlue;
       background-color: midnightblue;
